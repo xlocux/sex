@@ -70,8 +70,8 @@ def main():
     global args
     # Parse command line arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", required=True, help="Set directory to scan")
-    ap.add_argument("--threads", required=True, type=int, help="Number of threads")
+    ap.add_argument("-d", "--dir", required=True, help="Set directory to scan")
+    ap.add_argument("-t", "--threads", required=True, type=int, help="Number of threads")
     ap.add_argument("--colorless", required=False, action='store_true', help="Disable colored output")
     args = ap.parse_args()
     
