@@ -48,6 +48,7 @@
     "npm_access_token": "npm_[a-zA-Z0-9]{36}",
     "shopify_shared_secret": "shpss_[a-fA-F0-9]{32}",
     "shopify_access_token": "shpat_[a-fA-F0-9]{32}",
+    "openai_token": "sk(?:-proj)?-[A-Za-z0-9_-]{20,}",
     "openai_project_key": "sk-proj-[A-Za-z0-9_-]{20,}",
     "openai_legacy_key": "sk-[A-Za-z0-9_-]{20,}",
     "anthropic_key": "sk-ant(?:-admin)?-[A-Za-z0-9_-]{12,}",
