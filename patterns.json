@@ -13,7 +13,6 @@
     "google_captcha": "6L[0-9A-Za-z-_]{38}",
     "google_oauth": "ya29\\.[0-9A-Za-z\\-_]+",
     "amazon_aws_access_key_id": "([^A-Z0-9]|^)(AKIA|A3T|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}",
-    "amazon_aws_secret_access_key": "[A-Za-z0-9/+=]{40}",
     "amazon_mws_auth_token": "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
     "amazonaws_url": "s3\\.amazonaws.com[/]+|[a-zA-Z0-9_-]*\\.s3\\.amazonaws.com",
     "secret": "(aws_access|aws_secret|api[_-]?key|token[_-]?|ListBucketResult|FirebaseRemoteConfig|S3_ACCESS_KEY|aws_|ssh-rsa AA)",
