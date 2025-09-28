@@ -7,7 +7,9 @@ A powerful multi-threaded tool for scanning directories and extracting secrets, 
 ## Features
 
 - **Multi-threaded scanning**: Process multiple files simultaneously for faster results
-- **Comprehensive pattern matching**: Pre-configured with patterns for 30+ common secret types (Slack tokens, AWS keys, API tokens, etc.)
+- **Comprehensive pattern matching**: Pre-configured with patterns for 40+ common secret types (Slack tokens, AWS keys, API tokens, etc.)
+- **AI Token Detection**: Specialized patterns for AI platform tokens (OpenAI, Anthropic, Hugging Face, Groq, etc.)
+- **ZIP File Support**: Scan inside compressed archives (ZIP, JAR, WAR, EAR files)
 - **Colorful output**: Easy-to-read colored console output (can be disabled with `--colorless`)
 - **Automatic dependency installation**: Installs required packages automatically on first run
 - **Cross-platform compatibility**: Works on Windows, Linux, and macOS
@@ -31,11 +33,12 @@ python sex.py --dir /path/to/scan --threads 10
 ```
 
 ### Command Line Arguments
-| Argument | Description | Required |
-|----------|-------------|----------|
-| `--dir` | Directory to scan recursively | Yes |
-| `--threads` | Number of parallel threads to use | Yes |
-| `--colorless` | Disable colored output | No |
+| Argument | Short | Description | Required |
+|----------|-------|-------------|----------|
+| `--dir` | `-d` | Directory to scan recursively | Yes |
+| `--threads` | `-t` | Number of parallel threads to use | Yes |
+| `--zip` | `-z` | Scan inside ZIP/JAR/WAR/EAR files | No |
+| `--colorless` | | Disable colored output | No |
 
 ### Examples
 
@@ -54,15 +57,45 @@ python sex.py --dir '/var/www/html/' --threads 8 --colorless
 python sex.py --dir 'C:\Projects\app\' --threads 12
 ```
 
+**Scan with AI token detection and ZIP support:**
+```bash
+python sex.py -d '/path/to/ai-project' -t 8 -z
+```
+
+**Comprehensive security audit:**
+```bash
+python sex.py -d '/path/to/codebase' -t 16 -z --colorless
+```
+
 ## How It Works
 
 ### 1. Pattern Loading
 The tool loads detection patterns from `patterns.json`, which contains regular expressions for identifying various types of secrets including:
+
+**Traditional Secrets:**
 - API keys (Google, AWS, Stripe, etc.)
 - OAuth tokens
 - Database connection strings
 - Private keys
 - Authentication tokens
+
+**AI Platform Tokens:**
+- OpenAI (Project and Legacy keys)
+- Anthropic Claude
+- Hugging Face
+- Azure OpenAI
+- Groq
+- Replicate
+- OpenRouter
+- Perplexity
+- DeepSeek
+
+**ZIP File Scanning:**
+When the `-z` flag is enabled, the tool also scans inside compressed archives:
+- ZIP files
+- JAR files (Java archives)
+- WAR files (Web application archives)
+- EAR files (Enterprise archives)
 
 ### 2. File Discovery
 The tool recursively walks through all subdirectories of the specified path, collecting file paths for scanning.
