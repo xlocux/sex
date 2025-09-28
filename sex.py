@@ -53,7 +53,8 @@ def extract_secrets(file_path):
             for pattern_name, pattern in patterns:
                 # Improved regex pattern to handle start/end of string and various delimiters
                 # Use word boundaries and common separators to reduce false positives
-                the_pattern = rf"(^|[:=/'\"\s`´,?\]\|}}&/*])({pattern})($|[:=/'\"\s`´,?\[{|&/*])"
+                # Properly escape the character classes in the f-string
+                the_pattern = rf"(^|[:=/'\"\s`´,?\]\|}}&/*])({pattern})($|[:=/'\"\s`´,?\[{{|&/*])"
                 compiled_pattern = re.compile(the_pattern)
                 matches = compiled_pattern.findall(contents)
                 
