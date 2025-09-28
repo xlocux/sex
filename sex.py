@@ -51,13 +51,16 @@ def extract_secrets(file_path):
             contents = f.read()
             
             for pattern_name, pattern in patterns:
-                # Compile the regex pattern
-                the_pattern = rf"[:|=|'|\"|\s*|`|´| |,|?=|\]|\|//|/\*}}]({pattern})[:|=|'|\"|\s*|`|´| |,|?=|\]|\}}|&|//|\*/]"
+                # Improved regex pattern to handle start/end of string and various delimiters
+                # Use word boundaries and common separators to reduce false positives
+                the_pattern = rf"(^|[:=/'\"\s`´,?\]\|}}&/*])({pattern})($|[:=/'\"\s`´,?\[{|&/*])"
                 compiled_pattern = re.compile(the_pattern)
                 matches = compiled_pattern.findall(contents)
                 
                 for match in matches:
-                    print_result(pattern_name, str(match), file_path, args.colorless)
+                    # The actual match is the second group in the tuple
+                    secret = match[1]
+                    print_result(pattern_name, str(secret), file_path, args.colorless)
     except Exception as e:
         # Handle file reading errors gracefully
         pass
