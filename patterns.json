@@ -48,15 +48,12 @@
     "npm_access_token": "npm_[a-zA-Z0-9]{36}",
     "shopify_shared_secret": "shpss_[a-fA-F0-9]{32}",
     "shopify_access_token": "shpat_[a-fA-F0-9]{32}",
-    "openai_token": "sk(?:-proj)?-[A-Za-z0-9_-]{20,}",
-    "openai_project_key": "sk-proj-[A-Za-z0-9_-]{20,}",
-    "openai_legacy_key": "sk-[A-Za-z0-9_-]{20,}",
+    "openai_deepseek_token": "sk(?:-proj)?-[A-Za-z0-9_-]{20,}",
     "anthropic_key": "sk-ant(?:-admin)?-[A-Za-z0-9_-]{12,}",
     "huggingface_key": "hf_[A-Za-z0-9]{20,}",
     "azure_openai_key": "[0-9A-Fa-f]{32}",
     "groq_key": "gsk_[A-Za-z0-9]{30,}",
     "replicate_key": "r8_[A-Za-z0-9]{37}",
     "openrouter_key": "sk-or-[A-Za-z0-9_-]{8,}",
-    "perplexity_key": "pplx-[A-Za-z0-9]{8,}",
-    "deepseek_token": "sk-[A-Za-z0-9]{20,}"
+    "perplexity_key": "pplx-[A-Za-z0-9]{8,}"
 }
