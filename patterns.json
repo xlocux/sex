@@ -55,5 +55,13 @@
     "groq_key": "gsk_[A-Za-z0-9]{30,}",
     "replicate_key": "r8_[A-Za-z0-9]{37}",
     "openrouter_key": "sk-or-[A-Za-z0-9_-]{8,}",
-    "perplexity_key": "pplx-[A-Za-z0-9]{8,}"
+    "perplexity_key": "pplx-[A-Za-z0-9]{8,}",
+    "gitlab_personal_token": "glpat-[a-zA-Z0-9_\\-]{20}",
+    "dockerhub_access_token": "dckr_pat_[a-zA-Z0-9\\-_]{32}",
+    "jfrog_artifactory_key": "AKCp[a-zA-Z0-9]{40}",
+    "azure_devops_token": "[a-z0-9]{52}",
+    "notion_integration_token": "secret_[a-zA-Z0-9]{43}",
+    "atlassian_api_token": "ATATT[a-zA-Z0-9]{32}",
+    "newrelic_license_key": "NRAK-[A-Z0-9]{27}",
+    "jenkins_api_token": "[a-f0-9]{32}"
 }
